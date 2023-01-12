@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+
+        <h2>Listado de clientes</h2>
+
+        {% block content%}
+
+        <a href="/ECycling/crea_cliente/" class="btn btn-primary btn-sm">Crear Cliente</a>
+        <br></br>
+
+        {% for cliente in clientes %}
+
+         <div class="card" style="width: 25rem;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAGWLWO5fPM9A6tOTzmzTZR267g9-Zl3R8WQ&usqp=CAU" class="card-img-left"  width="35" height="40">
+              <div class="card-body">
+              <h5 class="card-title">Nombre : {{cliente.nombre}} {{cliente.apellido}}</h5>
+              <p class="card-text">Su direccion es {{cliente.direccion}} {{cliente.localidad}} {{cliente.cp}}.</p>
+              <p class="card-text">Su telefono {{cliente.telefono}} y su mail {{cliente.email}} </p>
+             
+              </div>
+          </div>
+ 
+     {% endfor %}   
+     {% endblock %} 
